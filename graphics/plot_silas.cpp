@@ -13,7 +13,7 @@ void plot2Dpoint(float x,float y, float red, float green, float blue){
 
 void drawPoints()
 {
-    int x,y;
+    float x,y;
     float h,k;
     float red = 1.0,green = 0.0 ,blue = 0.0;
     //glClearColor(red,green,blue,alpha);
@@ -23,31 +23,31 @@ void drawPoints()
     //void glOrtho(GLdouble left,  GLdouble right,
     //GLdouble bottom,  GLdouble top,
     //GLdouble nearVal,  GLdouble farVal);
-    glOrtho(-400.0, 400.0, -400.0, 400.0, -400.0, 400.0);
+    glOrtho(-20.0, 20.0, 20.0, -20.0, -20.0, 20.0);
     h = -0.5; k = -0.5;
     glPointSize(3.0);
     glBegin(GL_POINTS);// points
     //plot x axis
-    for (x = -400; x <= 400; x= x+2){
+    for (x = -20; x <= 20; x= x+2){
       h = x;  k = 0; plot2Dpoint(h,k,1,0,1);
     }//end x
     //plot y axis
-    for (y = -400; y <= 400; y= y+2){
+    for (y = -20; y <= 20; y= y+2){
       h = 0;  k = y; plot2Dpoint(h,k,1,0,1);
     }//end x
 
     //plot y = a(x-k)^2 + k;
-    for (x = -400; x <= 400; x++){
+    for (x = -20; x <= 20; x++){
       h = x;
-      k = (float)(-1*((x - 3)*(x - 5))-1);
+      k = (float)pow(x,3);
         cout<<"points "<<h<<" "<<k<<endl;
         plot2Dpoint(h,k,1,1,0);
       if (green > 1)green = 0;
     }//end j
 	// plot y = x^2
-    for (y = -400; y <= 400; y++){
-      h = y;
-      k = (float)(+1*((y + 2)*(y + 2))+1);
+    for (x = -20; x <= 20; x=x+0.005){
+      h = x;
+      k = (float)(-3*pow(x/10,3));
         cout<<"points "<<h<<" "<<k<<endl;
         plot2Dpoint(h,k,0,1,0);
       if (green > 1)green = 0;

@@ -15,7 +15,7 @@ int main(){
 
   cout<<"one is "<<one <<" "<< one<<"\n";
   cout<<"two is "<<two <<" "<<two<<"\n";
-  cout<<"one two locations"<<&one<<" "<<&two<<"\n";
+  cout<<"one two locations"<<&one<<" "<<&two<<"\n";+5
   cout<<"pointer values "<<*p1<<" "<<*p2<<"\n";
   cout<<"pointer locations "<<&p1<<" "<<&p2<<"\n";
   return 0;
